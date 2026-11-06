@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Sinapsis Duel — CinemaX Brain Games</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="wrap">
+  <h1><span class="grad">Sinapsis</span> Duel</h1>
+  <p class="muted">Duel memori 2–4 pemain di satu perangkat. Ulangi urutan cahaya, tambahkan satu petak, lalu serahkan ke lawan.</p>
+
+  <div class="stage" id="stage">
+    <aside class="score" id="score" aria-label="Papan skor"></aside>
+    <section class="arena">
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="timer" aria-hidden="true"><u id="tbar"></u></div>
+      <div class="board" id="board">
+        <button class="tile" data-i="0" aria-label="Petak 1" type="button"></button><button class="tile" data-i="1" aria-label="Petak 2" type="button"></button><button class="tile" data-i="2" aria-label="Petak 3" type="button"></button>
+        <button class="tile" data-i="3" aria-label="Petak 4" type="button"></button><button class="tile" data-i="4" aria-label="Petak 5" type="button"></button><button class="tile" data-i="5" aria-label="Petak 6" type="button"></button>
+        <button class="tile" data-i="6" aria-label="Petak 7" type="button"></button><button class="tile" data-i="7" aria-label="Petak 8" type="button"></button><button class="tile" data-i="8" aria-label="Petak 9" type="button"></button>
+      </div>
+      <p class="meta muted">Urutan: <b id="len">0</b> · Rekor: <b id="best">0</b></p>
+    </section>
+    <div class="tools">
+      <button class="ib" id="bMute" type="button" aria-label="Suara">🔊</button>
+      <button class="ib" id="bFs" type="button" aria-label="Layar penuh">⛶</button>
+    </div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="overlay" id="ov">
+      <div class="panel">
+        <h2 id="ovT"></h2><p id="ovP" class="muted"></p>
+        <div id="sel" class="seg" role="group" aria-label="Jumlah pemain">
+          <button type="button" data-n="2" aria-pressed="true">2 Pemain</button><button type="button" data-n="3" aria-pressed="false">3 Pemain</button><button type="button" data-n="4" aria-pressed="false">4 Pemain</button>
+        </div>
+        <button class="btn" id="btn" type="button"></button>
+        <ul class="keys muted small">
+          <li>Tiap pemain punya 3 ❤️. Salah atau telat 8 detik = −1 ❤️.</li>
+          <li>Tiap kelipatan 5 petak, urutan diulang <b>MUNDUR</b> ⏪.</li>
+          <li><kbd>1</kbd>–<kbd>9</kbd> petak · <kbd>F</kbd> layar penuh · <kbd>P</kbd> jeda</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/game.js"></script>
+</body>
+</html>
